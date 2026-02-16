@@ -1,0 +1,4 @@
+hello	world
+95
+3.94
+a

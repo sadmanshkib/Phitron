@@ -1,0 +1,1 @@
+cout << "after delete tail: " << tail->val << endl;
