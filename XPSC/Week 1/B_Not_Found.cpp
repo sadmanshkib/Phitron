@@ -3,38 +3,37 @@ using namespace std;
 int main()
 {
     string s;
-    // cin >> s;
-    getline(cin,s);
-    bool a[27] = {false};
-    int cmax = 0, cmin = 1000;
-    for (char c : s)
-    {
-        int x = c;
-        a[x - 97] = true;
-        if (c < cmin)
-        {
-            if(c>=97)
-            cmin = c;
-        }
-        if (c > cmax)
-        {
-            cmax = c;
-        }
-    }
+    cin >> s;
+    sort(s.begin(), s.end());
 
-    bool flag = false;
-    for (int i = cmin - 97; i < cmax - 97; i++)
+    if (s[0] != 'a')
     {
-        if (a[i] == false)
-        {
-            flag = true;
-            char c = i + 97;
-            cout << c << endl;
-            break;
-        }
+        cout << "a" << endl;
     }
-    if (!flag)
-        cout << "None" << endl;
+    else
+    {
+        bool flag = true;
+        // cout << n << endl;
+        for (int i = 0; i < s.length(); i++)
+        {
+            char c = s[i];
+            char c2 = s[i] + 1;
+            if(c == 'z')
+                break;
+            if (s[i + 1] != c)
+            {
+                if (s[i + 1] != c2)
+                {
+
+                    cout << c2 << endl;
+                    flag = false;
+                    break;
+                }
+            }
+        }
+        if (flag)
+            cout << "None" << endl;
+    }
 
     return 0;
 }
