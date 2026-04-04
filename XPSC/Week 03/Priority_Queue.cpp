@@ -14,7 +14,7 @@ int main()
     p.pop();
     p.pop();
     cout << p.top() << endl;
-    cout << p.empty() << endl;
+    cout << p.empty() << endl; 
     cout << " size -> " << p.size() << endl;
     while (!p.empty())
     {
